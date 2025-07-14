@@ -1,0 +1,241 @@
+blueprint:
+  name: ZHA - Namron Multi-Channel Zigbee Switch (model 4512772)
+  description: Control lights and more with Namron Zigbee 1-4 channel switch using ZHA. Supports short_press, long_hold and long_release for all channels (quirk required).
+  domain: automation
+  input:
+    remote:
+      name: Namron Zigbee switch
+      selector:
+        device:
+          integration: zha
+
+    # Channel 1
+    channel_1_on_short:
+      name: Channel 1 ON short press
+      default: []
+      selector:
+        action: {}
+    channel_1_off_short:
+      name: Channel 1 OFF short press
+      default: []
+      selector:
+        action: {}        
+    channel_1_on_long_hold:
+      name: Channel 1 ON long hold
+      default: []
+      selector:
+        action: {}
+    channel_1_on_long_release:
+      name: Channel 1 ON long release
+      default: []
+      selector:
+        action: {}
+
+    # Channel 2
+    channel_2_on_short:
+      name: Channel 2 ON short press
+      default: []
+      selector:
+        action: {}
+    channel_2_off_short:
+      name: Channel 2 OFF short press
+      default: []
+      selector:
+        action: {}        
+    channel_2_on_long_hold:
+      name: Channel 2 ON long hold
+      default: []
+      selector:
+        action: {}
+    channel_2_on_long_release:
+      name: Channel 2 ON long release
+      default: []
+      selector:
+        action: {}
+
+    # Channel 3
+    channel_3_on_short:
+      name: Channel 3 ON short press
+      default: []
+      selector:
+        action: {}
+    channel_3_off_short:
+      name: Channel 3 OFF short press
+      default: []
+      selector:
+        action: {}        
+    channel_3_on_long_hold:
+      name: Channel 3 ON long hold
+      default: []
+      selector:
+        action: {}
+    channel_3_on_long_release:
+      name: Channel 3 ON long release
+      default: []
+      selector:
+        action: {}
+
+    # Channel 4
+    channel_4_on_short:
+      name: Channel 4 ON short press
+      default: []
+      selector:
+        action: {}
+    channel_4_off_short:
+      name: Channel 4 OFF short press
+      default: []
+      selector:
+        action: {}        
+    channel_4_on_long_hold:
+      name: Channel 4 ON long hold
+      default: []
+      selector:
+        action: {}
+    channel_4_on_long_release:
+      name: Channel 4 ON long release
+      default: []
+      selector:
+        action: {}
+
+trigger:
+  # Channel 1
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_1_on
+    id: channel_1_on_short
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_hold
+    subtype: channel_1_on
+    id: channel_1_on_long_hold
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_release
+    subtype: channel_1_on
+    id: channel_1_on_long_release
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_1_off
+    id: channel_1_off_short
+
+  # Channel 2
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_2_on
+    id: channel_2_on_short
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_hold
+    subtype: channel_2_on
+    id: channel_2_on_long_hold
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_release
+    subtype: channel_2_on
+    id: channel_2_on_long_release
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_2_off
+    id: channel_2_off_short
+
+  # Channel 3
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_3_on
+    id: channel_3_on_short
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_hold
+    subtype: channel_3_on
+    id: channel_3_on_long_hold
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_release
+    subtype: channel_3_on
+    id: channel_3_on_long_release
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_3_off
+    id: channel_3_off_short
+
+  # Channel 4
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_4_on
+    id: channel_4_on_short
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_hold
+    subtype: channel_4_on
+    id: channel_4_on_long_hold
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: long_release
+    subtype: channel_4_on
+    id: channel_4_on_long_release
+  - platform: device
+    device_id: !input remote
+    domain: zha
+    type: short_press
+    subtype: channel_4_off
+    id: channel_4_off_short
+
+action:
+  - choose:
+      - conditions: "{{ trigger.id == 'channel_1_on_short' }}"
+        sequence: !input channel_1_on_short
+      - conditions: "{{ trigger.id == 'channel_1_off_short' }}"
+        sequence: !input channel_1_off_short        
+      - conditions: "{{ trigger.id == 'channel_1_on_long_hold' }}"
+        sequence: !input channel_1_on_long_hold
+      - conditions: "{{ trigger.id == 'channel_1_on_long_release' }}"
+        sequence: !input channel_1_on_long_release
+
+      - conditions: "{{ trigger.id == 'channel_2_on_short' }}"
+        sequence: !input channel_2_on_short
+      - conditions: "{{ trigger.id == 'channel_2_off_short' }}"
+        sequence: !input channel_2_off_short        
+      - conditions: "{{ trigger.id == 'channel_2_on_long_hold' }}"
+        sequence: !input channel_2_on_long_hold
+      - conditions: "{{ trigger.id == 'channel_2_on_long_release' }}"
+        sequence: !input channel_2_on_long_release
+
+      - conditions: "{{ trigger.id == 'channel_3_on_short' }}"
+        sequence: !input channel_3_on_short
+      - conditions: "{{ trigger.id == 'channel_3_off_short' }}"
+        sequence: !input channel_3_off_short        
+      - conditions: "{{ trigger.id == 'channel_3_on_long_hold' }}"
+        sequence: !input channel_3_on_long_hold
+      - conditions: "{{ trigger.id == 'channel_3_on_long_release' }}"
+        sequence: !input channel_3_on_long_release
+
+      - conditions: "{{ trigger.id == 'channel_4_on_short' }}"
+        sequence: !input channel_4_on_short
+      - conditions: "{{ trigger.id == 'channel_4_off_short' }}"
+        sequence: !input channel_4_off_short        
+      - conditions: "{{ trigger.id == 'channel_4_on_long_hold' }}"
+        sequence: !input channel_4_on_long_hold
+      - conditions: "{{ trigger.id == 'channel_4_on_long_release' }}"
+        sequence: !input channel_4_on_long_release
