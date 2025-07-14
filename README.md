@@ -25,7 +25,7 @@ The included **automation blueprint** makes it easy to use these triggers to con
 
 ## Features
 
-- Full support for 8 (or 2/4, depending on your model) individual channels.
+- Full support for 8 (or 2/4, depending on your configuration) individual channels.
 - Each channel supports:
   - Short press "on" / "off"
   - Long hold (on) for dimming
@@ -131,12 +131,11 @@ trigger:
 - Based on community discussions and testing in Home Assistant with ZHA.
 - Special thanks to everyone providing feedback and code!
 
----
-
-## License
-
-MIT License
 
 ---
 
-**Feel free to open issues or PRs if you have improvements or problems!**
+## Credits
+
+Developed and maintained by MAFL74  
+[GitHub profile](https://github.com/MAFL74)  
+Feel free to open an issue or pull request!
