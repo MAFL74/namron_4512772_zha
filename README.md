@@ -80,7 +80,7 @@ The included **automation blueprint** makes it easy to use these triggers to con
 - Registers all buttons and actions of the Namron 4512772 as ZHA device automations.
 - Triggers are exposed with clear names:
   - `short_press` / `long_hold` / `long_release`
-  - `channel_1_on`, `channel_1_off`, ... up to `channel_8_on`, `channel_8_off`
+  - `channel_1_on`, `channel_1_off`, ... up to `channel_4_on`, `channel_4_off`
 
 **What the blueprint does:**
 
