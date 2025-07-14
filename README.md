@@ -38,7 +38,7 @@ The included **automation blueprint** makes it easy to use these triggers to con
 
 ### 1. Copy the Quirk
 
-1. Place the custom quirk Python file (`namron_4512772.py`) in your Home Assistant instance at:
+1. Place the custom quirk Python file (`namron_4512772_zha.py`) in your Home Assistant instance at:
 
    ```
    /config/custom_zha_quirks/
@@ -130,11 +130,6 @@ trigger:
 
 - Based on community discussions and testing in Home Assistant with ZHA.
 - Special thanks to everyone providing feedback and code!
-
-
----
-
-## Credits
 
 Developed and maintained by MAFL74  
 [GitHub profile](https://github.com/MAFL74)  
