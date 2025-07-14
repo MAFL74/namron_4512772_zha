@@ -63,7 +63,7 @@ The included **automation blueprint** makes it easy to use these triggers to con
 ### 3. Import the Blueprint
 
 1. In Home Assistant, go to **Settings > Automations & Scenes > Blueprints**.
-2. Click **Import Blueprint** and paste the YAML from [`blueprint.yaml`](blueprint.yaml) in this repo.
+2. Click **Import Blueprint** and paste the YAML from [`blueprint.yaml`](namron_4512772_blueprint.yaml) in this repo.
 3. Save the blueprint.
 
 ### 4. Create Automations
