@@ -11,7 +11,7 @@ from zigpy.quirks import CustomDevice
 
 class Namron4512772(CustomDevice):
     signature = {
-        MODELS_INFO: [("NAMRON AS", "4512772")],
+        MODELS_INFO: [("NAMRON AS", "4512772"),("NAMRON AS", "4512773")],
         ENDPOINTS: {
             1: {
                 PROFILE_ID: 0x0104,
@@ -57,7 +57,7 @@ class Namron4512772(CustomDevice):
 
     # Only endpoint 1 exposes battery (PowerConfiguration) and firmware (OTA)
     replacement = {
-        MODELS_INFO: [("NAMRON AS", "4512772")],
+        MODELS_INFO: [("NAMRON AS", "4512772"),("NAMRON AS", "4512773")],
         ENDPOINTS: {
             1: {
                 PROFILE_ID: 0x0104,
